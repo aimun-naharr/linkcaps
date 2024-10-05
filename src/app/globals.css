@@ -9,6 +9,8 @@
   --black: #25262a;
   --golden-gray: #eeebe6;
   --radius: 10;
+  --dark-input-bg: #25262a;
+  --form-bg: #1f2024;
 }
 
 @media (prefers-color-scheme: dark) {
