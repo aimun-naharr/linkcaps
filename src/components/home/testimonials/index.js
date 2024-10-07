@@ -15,24 +15,24 @@ export default function Testimonials() {
     {
       name: 'John Doe',
       role: 'CEO of google',
-      comment: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ',
+      comment: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
     },
-    {
-      name: 'John Doe',
-      role: 'CEO of google',
-      comment: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ',
-    },
-    {
-      name: 'John Doe',
-      role: 'CEO of google',
-      comment: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ',
-    },
+    // {
+    //   name: 'John Doe',
+    //   role: 'CEO of google',
+    //   comment: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ',
+    // },
+    // {
+    //   name: 'John Doe',
+    //   role: 'CEO of google',
+    //   comment: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ',
+    // },
 
   ]
   return (
     <div className='py-28 relative'>
       <div className='absolute w-[200px] -z-[1] h-[120px] rounded-full bg-[--blue] left-1/2 -translate-x-1/2 blur-[150px] top-1/2'></div>
-      <div className='absolute right-0 -top-5 -z-[1]'>
+      <div className='absolute right-0 -top-5 -z-[1] opacity-[0.2]'>
         <Image src={testimonialsWireframe} alt='wireframe' className='w-full h-full object-cover' />
       </div>
       <Container>

@@ -1,10 +1,12 @@
+'use client'
 import Container from '@/components/layouts/Container'
 import Image from 'next/image'
-import React from 'react'
+import React, { forwardRef } from 'react'
 import Wireframe from '@/assets/decore/service-wireframe.svg'
 
 
-export default function Services() {
+const Services = forwardRef((props, ref) => {
+
   const services = [
     {
       title: 'Website Development',
@@ -28,7 +30,7 @@ export default function Services() {
     },
   ]
   return (
-    <div className='bg-[--black] text-white pt-20 relative pb-10 overflow-hidden'>
+    <div ref={ref} className='bg-[--black] text-white pt-20 relative pb-10 overflow-hidden'>
       <div className="absolute    w-full  -left-1/2 opacity-[0.4] -top-1/2">
         <Image src={Wireframe} alt="wireframe" className="w-full h-full  object-cover" />
       </div>
@@ -52,4 +54,6 @@ export default function Services() {
       </Container>
     </div>
   )
-}
+})
+Services.displayName = 'Services';
+export default Services;
