@@ -1,6 +1,6 @@
 import Container from '@/components/layouts/Container'
 import { cn } from '@/lib/utils'
-import React from 'react'
+import React, { useRef } from 'react'
 import teamStar from '@/assets/decore/team-star.svg'
 import Image from 'next/image'
 import Linkedin from '@/assets/linkedin.svg'
@@ -8,8 +8,10 @@ import portrait1 from '@/assets/portrait-1.png'
 import portrait2 from '@/assets/portrait-2.png'
 import portrait3 from '@/assets/portrait-3.png'
 import portrait4 from '@/assets/portrait-4.png'
+import { motion } from 'framer-motion'
 
 export default function TeamMembers() {
+  const scrollRef = useRef(null)
   const teamMembers = [
     {
       img: portrait1,
@@ -36,13 +38,54 @@ export default function TeamMembers() {
       description: 'For athletes, high altitude produces two contradictory effects on performance. For explosive evenFor athletes, high altitude produces two contradictory effects on performance. For explosive events'
     },
   ]
+  const fadeUp = {
+    hidden: {
+      y: '40%',
+      opacity: 0,
+      rotate: '10deg',
+      filter: 'blur(10px)'
+    },
+    show: (i = 0) => ({
+      y: 0,
+      opacity: 1,
+      rotate: 0,
+      filter: 'blur(0)',
+      transition: {
+        duration: 0.6,
+        delay: i,
+        // ease: [0.37, 0, 0.63, 1]
+      }
+    })
+  }
+  const blurOut = {
+    hidden: {
+      y: '100%',
+
+      filter: 'blur(10px)'
+    },
+    show: (i = 0) => ({
+      y: 0,
+
+      filter: 'blur(0)',
+      transition: {
+        duration: 0.6,
+        delay: i,
+        // ease: [0.37, 0, 0.63, 1]
+      }
+    })
+  }
+
   return (
-    <div className='my-20 relative'>
+    <div className='my-20 relative' ref={scrollRef}>
       <div className='absolute right-20 -top-6 opacity-[0.4]'>
         <Image src={teamStar} alt='star' className='h-full w-full object-cover' />
       </div>
       <Container>
-        <h1 className='mb-20 text-3xl leading-[1.9rem] font-semibold max-w-[250px]'>Meet our team members</h1>
+        <motion.h1
+          initial='hidden'
+          whileInView='show'
+          variants={blurOut}
+          viewport={{ once: true, root: scrollRef, margin: '10px' }} className='mb-20 text-3xl leading-[1.9rem] font-semibold max-w-[250px]'>Meet our team members</motion.h1>
 
         <div className='flex gap-8'>
           {
@@ -66,7 +109,12 @@ export default function TeamMembers() {
               //     <ExternalLink />
               //   </div>
               // </div>
-              <div key={`${member.name}-${i + 1} `} className='flex flex-col gap-3'>
+              <motion.div variants={fadeUp}
+                initial='hidden'
+                whileInView='show'
+                custom={(i * 0.1)}
+                viewport={{ once: true, root: scrollRef, margin: '50px' }}
+                key={`${member.name}-${i + 1} `} className='flex flex-col gap-3'>
                 <div className='relative after:content-[""] after:absolute after:w-full after:h-full after:left-2 after:-top-2 after:bg-blue-500/50 after:z-[-1] after:rounded-md hover:after:-top-1 hover:after:left-1 after:transition-all after:duration-500'>
                   <div className='size-[180px] bg-gray-200 rounded overflow-hidden'>
                     <Image src={member.img} alt={member.name} className='w-full h-full object-cover' />
@@ -82,7 +130,7 @@ export default function TeamMembers() {
 
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))
           }
         </div>
