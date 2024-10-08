@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Inter } from 'next/font/google'
 import Navbar from "@/components/Navbar";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
@@ -15,8 +16,12 @@ export default function RootLayout({ children }) {
       <body
         className={` ${inter.className} antialiased`}
       >
-        <Navbar />
-        {children}
+        <SmoothScroll>
+          <main className="relative">
+            <Navbar />
+            {children}
+          </main>
+        </SmoothScroll>
       </body>
     </html>
   );
