@@ -49,7 +49,6 @@ export default function Achievements() {
             {
               achievements.map((itm, i) => (
                 <motion.div
-
                   key={`${itm.title}-${i + 1}`}
                   variants={fadeUp}
                   initial='hidden'

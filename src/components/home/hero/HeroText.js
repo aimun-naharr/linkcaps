@@ -20,7 +20,7 @@ export default function HeroText() {
     })
   }
   return (
-    <h1 className="lg:text-5xl text-3xl text-[--black] font-medium text-center  flex flex-col tracking-tighter">
+    <h1 className="lg:text-5xl text-3xl text-[--black]  font-medium text-center  flex flex-col tracking-tighter">
       <div className='overflow-hidden py-1'>
         <motion.span className='inline-block' variants={fadeUp} initial='hidden' animate='show' custom={0}>Transforming ideas into <span className="text-[--blue]">Innovative</span> Software</motion.span>
       </div>
