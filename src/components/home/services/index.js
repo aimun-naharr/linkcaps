@@ -3,9 +3,12 @@ import Container from '@/components/layouts/Container'
 import Image from 'next/image'
 import React, { forwardRef } from 'react'
 import Wireframe from '@/assets/decore/service-wireframe.svg'
+import { motion } from 'framer-motion'
+import { blurOut } from '@/animations'
 
 
 const Services = forwardRef((props, ref) => {
+
 
   const services = [
     {
@@ -30,6 +33,7 @@ const Services = forwardRef((props, ref) => {
     },
 
   ]
+
   return (
     <div ref={ref} className='bg-[--black] text-white pt-20 relative pb-10 rounded-md'>
       {/* <div className="absolute    w-full  -left-1/2 opacity-[0.4] top-0">
@@ -37,7 +41,11 @@ const Services = forwardRef((props, ref) => {
       </div> */}
       <Container>
         <div className='relative'>
-          <h1 className='mb-20 text-3xl font-semibold'>Services we offer</h1>
+          <motion.h1 initial='hidden'
+            whileInView='show'
+            variants={blurOut}
+            viewport={{ once: true, root: ref, margin: '-10px' }}
+            className='mb-20 text-3xl font-semibold'>Services we offer</motion.h1>
           <div className='flex flex-col  sticky top-0'>
             {
               services.map((service, index) => {

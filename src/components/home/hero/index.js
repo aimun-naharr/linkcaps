@@ -24,7 +24,7 @@ export default function Hero() {
           <Image src={Wireframe} alt="wireframe" className="w-full h-full  object-cover" />
         </motion.div>
         {/* hero */}
-        <div className="relative my-20 py-20 " id='hero-section-content'>
+        <div className="relative my-20  py-20 " id='hero-section-content'>
 
           <div className="absolute size-[200px] left-1/2 -translate-y-1/2 top-20 z-[-1]  bg-[--blue] blur-[300px]"></div>
           <Container>

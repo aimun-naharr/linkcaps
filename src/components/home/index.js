@@ -21,10 +21,11 @@ export default function Home() {
       }
     });
     tl.to('#hero-section-content', {
-      duration: 0.5,
-      scale: 0.7,
+      duration: 0.4,
+      y: 200,
       opacity: 0,
       filter: 'blur(5px)',
+      ease: "power4.out",
 
     }, 'a')
       .to('#hero-wireframe', {

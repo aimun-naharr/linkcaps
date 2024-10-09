@@ -84,7 +84,7 @@ export default function TeamMembers() {
                 viewport={{ once: true, root: contentContainerRef, margin: '-120px' }}
                 key={`${member.name}-${i + 1} `} className='flex flex-col gap-3'>
                 <div className='relative after:content-[""] after:absolute after:w-full after:h-full after:left-2 after:-top-2 after:bg-blue-500/50 after:z-[-1] after:rounded-md hover:after:-top-1 hover:after:left-1 after:transition-all after:duration-500'>
-                  <div className='size-[180px] bg-gray-200 rounded overflow-hidden'>
+                  <div className='size-[140px] lg:size-[180px] bg-gray-200 rounded overflow-hidden'>
                     <Image src={member.img} alt={member.name} className='w-full h-full object-cover' />
                   </div>
                 </div>
@@ -93,7 +93,7 @@ export default function TeamMembers() {
                     <p className='text-base font-bold'>{member.name}</p>
                     <p className='text-sm'>{member.role}</p>
                   </div>
-                  <div className='size-6'>
+                  <div className='size-4 lg:size-6'>
                     <Image alt='linkedin' src={Linkedin} className='h-full w-full object-cover' />
 
                   </div>
