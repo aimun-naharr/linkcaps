@@ -7,7 +7,7 @@ import HeroCustomerAvatar from './HeroCustomerAvatar'
 import HeroText from './HeroText'
 import HeroBottom from './HeroBottom'
 import Achievements from './Achivements'
-import Wireframe from '@/assets/decore/hero-Wireframe.svg'
+import Wireframe from '@/assets/decore/hero-wireframe.svg'
 
 
 export default function Hero() {
