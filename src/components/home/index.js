@@ -25,7 +25,7 @@ export default function Home() {
       y: 200,
       opacity: 0,
       filter: 'blur(5px)',
-      ease: "power4.out",
+      ease: "power2.inOut",
 
     }, 'a')
       .to('#hero-wireframe', {
